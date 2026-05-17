@@ -1,5 +1,9 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/votingApp');
+require('dotenv').config()
+
+//const mongoUrl = process.env.MONGODB_URL_LOCAL;
+const mongoUrl=process.env.MONGODB_URL
+mongoose.connect(mongoUrl);
 
 const db = mongoose.connection;
 
